@@ -21,16 +21,16 @@ export class Game {
       else t = "X";
       if (
         // horizontal
-        (b[0] == t && b[1] == t && b[2] == t) ||
-        (b[3] == t && b[4] == t && b[5] == t) ||
-        (b[6] == t && b[7] == t && b[8] == t) ||
+        (b[0] === t && b[1] === t && b[2] === t) ||
+        (b[3] === t && b[4] === t && b[5] === t) ||
+        (b[6] === t && b[7] === t && b[8] === t) ||
         // vertical
-        (b[0] == t && b[3] == t && b[6] == t) ||
-        (b[1] == t && b[4] == t && b[7] == t) ||
-        (b[2] == t && b[5] == t && b[8] == t) ||
+        (b[0] === t && b[3] === t && b[6] === t) ||
+        (b[1] === t && b[4] === t && b[7] === t) ||
+        (b[2] === t && b[5] === t && b[8] === t) ||
         // diagonal
-        (b[0] == t && b[4] == t && b[8] == t) ||
-        (b[2] == t && b[4] == t && b[6] == t)
+        (b[0] === t && b[4] === t && b[8] === t) ||
+        (b[2] === t && b[4] === t && b[6] === t)
       ) {
         return t;
       }
@@ -51,13 +51,13 @@ export class Game {
     if (this.gameCells[i] === "-") {
       this.gameCells[i] = this.whosTurn;
       this.whosTurn === "X" ? (this.whosTurn = "O") : (this.whosTurn = "X");
-      console.log(`cell ${i} clicked`);
+      //console.log(`cell ${i} clicked`);
     }
   }
 
   restart(): void {
     this.gameCells = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
     this.whosTurn = "X";
-    console.log("restart called");
+    //console.log("restart called");
   }
 }
